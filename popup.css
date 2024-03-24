@@ -1,0 +1,105 @@
+body {
+  /* font-family: Arial, sans-serif; */
+  margin: 20px;
+}
+
+h1 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+select,
+input[type="text"],
+button {
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Define CSS variables for slider dimensions */
+:root {
+  --slider-width: 30px;
+  --slider-height: 20px;
+  --slider-thumb-size: 16px;
+  --slider-padding: 2px;
+  --slider-timing: 0.2s;
+}
+
+/* Hide default checkbox */
+.toggle-switch input {
+  display: none;
+}
+
+/* Style toggle container */
+.toggle-switch {
+  display: flex;
+  align-items: center; /* Align items vertically */
+}
+
+/* Style label text */
+.label-text {
+  font-size: 12px; /* Adjust font size */
+  margin-right: 5px; /* Adjust spacing between text and switch */
+}
+
+/* Style slider */
+.slider {
+  position: relative;
+  cursor: pointer;
+  width: var(--slider-width); /* Use CSS variable for width */
+  height: var(--slider-height); /* Use CSS variable for height */
+  background-color: #ccc;
+  border-radius: calc(var(--slider-height) / 2); /* Adjust border radius */
+  transition: background-color var(--slider-timing);
+}
+
+/* Style slider thumb */
+.slider:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: var(--slider-padding); /* Set left position */
+  width: var(--slider-thumb-size); /* Use CSS variable for width */
+  height: var(--slider-thumb-size); /* Use CSS variable for height */
+  background-color: white;
+  border-radius: 50%;
+  transition: transform var(--slider-timing);
+}
+
+/* Style slider when toggled on */
+.toggle-switch input:checked + .slider {
+  background-color: #2196f3;
+}
+
+/* Style slider thumb when toggled on */
+.toggle-switch input:checked + .slider:before {
+  transform: translate(
+    calc(
+      var(--slider-width) - var(--slider-thumb-size) -
+        calc(var(--slider-padding) * 2)
+    ),
+    -50%
+  ); /* Adjust translation */
+}

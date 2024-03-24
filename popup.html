@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" style="min-width: 340px">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Readability Enhancer</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <h2>Streamable Blog</h2>
+    <form>
+      <label class="toggle-switch">
+        <span class="label-text">Enable CSS override for this domain</span>
+        <input type="checkbox" id="toggleSwitch" />
+        <span class="slider"></span>
+      </label>
+      <label for="selector">Which element should this be applied to?</label>
+      <select id="selector">
+        <option value="p, a, h1, h2, h3, h4, h5, h6, article, main ">
+          Most blog elements
+        </option>
+        <option value="p">&lt;p&gt;</option>
+        <option value="body">&lt;body&gt;</option>
+        <option value="body > *">body &gt; *</option>
+        <option value="html">&lt;html&gt;</option>
+        <option value="*">Everything!</option>
+        <option value="custom">Custom</option>
+      </select>
+      <input
+        type="text"
+        id="customSelector"
+        placeholder="custom css selector"
+        style="display: none"
+      />
+
+      <label for="maxWidth">
+        max-width
+        <!-- <span>sets this value as <i>ch</i></span> -->
+      </label>
+      <div style="display: flex; align-items: baseline; gap: 0.25em">
+        <input
+          type="text"
+          id="maxWidth"
+          maxlength="3"
+          style="display: inline-block; width: 4ch"
+        />
+        <span>ch</span>
+      </div>
+    </form>
+    <script src="popup.js"></script>
+  </body>
+</html>
